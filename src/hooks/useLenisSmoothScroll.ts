@@ -34,7 +34,7 @@ export function onLenisScroll(callback: (lenis: Lenis) => void): () => void {
 
 export function scrollToTarget(target: string | number | HTMLElement, offset: number = -80): void {
   if (globalLenisInstance) {
-    globalLenisInstance.scrollTo(target, { offset, duration: 0.9 });
+    globalLenisInstance.scrollTo(target, { offset, duration: 0.7 });
   } else {
     if (typeof target === 'number') {
       window.scrollTo({ top: target, behavior: 'smooth' });
@@ -50,12 +50,19 @@ export function scrollToTarget(target: string | number | HTMLElement, offset: nu
 
 export function useLenisSmoothScroll(): void {
   useEffect(() => {
-    // Ultra-fluid lerp interpolation for natural, buttery smooth scroll
+    // Check if device is primarily touch/mobile
+    const isTouchDevice = typeof window !== 'undefined' && (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.innerWidth < 768
+    );
+
+    // Responsive, high-performance lerp
     const lenis = new Lenis({
-      lerp: 0.08,
+      lerp: 0.14,
       wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
-      smoothWheel: true,
+      touchMultiplier: 1.0,
+      smoothWheel: !isTouchDevice,
       syncTouch: false,
       autoRaf: true,
       anchors: true

@@ -116,3 +116,32 @@
   animation: waveWaterRoll 2s linear infinite;
   font-weight: 700;
 }
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-900px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.animate-bubble-float-1 {
+  animation: bubbleFloat 9s infinite ease-in;
+}
+
+.animate-bubble-float-2 {
+  animation: bubbleFloat 13s infinite ease-in 2.5s;
+}
+
+.animate-bubble-float-3 {
+  animation: bubbleFloat 16s infinite ease-in 5s;
+}

@@ -225,6 +225,9 @@ export const JourneyOceanCanvas: React.FC = () => {
           isVisible = entry.isIntersecting;
           if (isVisible && !animId && isRunning) {
             animId = requestAnimationFrame(render);
+          } else if (!isVisible && animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
           }
         });
       },

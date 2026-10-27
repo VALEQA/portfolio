@@ -173,7 +173,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
 
       const handleResize = () => {
         if (!canvas) return;
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
         const rect = canvas.getBoundingClientRect();
         currentWidth = rect.width;
         currentHeight = rect.height;
@@ -281,7 +281,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
         const wave1Y = height * 0.26;
         ctx.save();
         ctx.beginPath();
-        for (let x = 0; x <= width; x += 4) {
+        for (let x = 0; x <= width; x += 8) {
           const cy = wave1Y + Math.sin(x * 0.005 + t * 0.45) * 12 + Math.cos(x * 0.009 - t * 0.3) * 5;
           if (x === 0) ctx.moveTo(x, cy);
           else ctx.lineTo(x, cy);
@@ -295,7 +295,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
         const wave2Y = height * 0.45;
         ctx.save();
         ctx.beginPath();
-        for (let x = 0; x <= width; x += 4) {
+        for (let x = 0; x <= width; x += 8) {
           const cy = wave2Y + Math.sin(x * 0.006 + t * 0.55 + 1.5) * 14 + Math.sin(x * 0.012 - t * 0.25) * 6;
           if (x === 0) ctx.moveTo(x, cy);
           else ctx.lineTo(x, cy);
@@ -310,7 +310,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
         ctx.beginPath();
         ctx.moveTo(0, height);
         ctx.lineTo(0, getTideY(0));
-        for (let x = 0; x <= width; x += 3) {
+        for (let x = 0; x <= width; x += 6) {
           ctx.lineTo(x, getTideY(x));
         }
         ctx.lineTo(width, height);
@@ -322,7 +322,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
         // Wet Sand Shoreline Shadow
         ctx.save();
         ctx.beginPath();
-        for (let x = 0; x <= width; x += 3) {
+        for (let x = 0; x <= width; x += 6) {
           const cy = getTideY(x);
           if (x === 0) ctx.moveTo(x, cy + 2);
           else ctx.lineTo(x, cy + 2);
@@ -333,7 +333,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
 
         // Surf Foam Edge
         ctx.beginPath();
-        for (let x = 0; x <= width; x += 3) {
+        for (let x = 0; x <= width; x += 6) {
           const cy = getTideY(x);
           if (x === 0) ctx.moveTo(x, cy);
           else ctx.lineTo(x, cy);
@@ -349,7 +349,7 @@ export const OceanHeroCanvas = forwardRef<OceanHeroHandle, { className?: string 
         ctx.stroke();
 
         // Surf Bubbles
-        for (let x = 6; x < width; x += 16) {
+        for (let x = 6; x < width; x += 24) {
           const cy = getTideY(x);
           const bubbleSpread = (Math.sin(x * 0.06 + t * 0.8) + 1) * 3 + 1;
           ctx.beginPath();

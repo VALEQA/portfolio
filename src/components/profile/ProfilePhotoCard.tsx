@@ -22,8 +22,8 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
   // Determine source image based on active mode
   const currentImageSrc =
     avatarMode === 'chibi'
-      ? profileData.avatarChibiUrl || '/avatar.svg'
-      : profileData.avatarUrl || '/avatar-real.png';
+      ? profileData.avatarChibiUrl || '/avatar-chibi.jpg'
+      : profileData.avatarUrl || '/avatar.jpg';
 
   return (
     <motion.div

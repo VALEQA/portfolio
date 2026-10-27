@@ -7,8 +7,8 @@ export const profileData: ProfileData = {
   status: 'Open for Internship & Junior Developer Roles',
   bio: 'Mahasiswa Teknik Informatika (Semester 5) di Universitas Esa Unggul yang antusias dalam pengembangan web dinamis, aplikasi mobile, dan eksplorasi analisis data. Terbiasa membangun antarmuka web dan aplikasi fungsional yang terhubung dengan basis data relasional MySQL maupun cloud Firebase.',
   experienceStart: '2023 - Sekarang',
-  avatarUrl: '/avatar.png',
-  avatarChibiUrl: '/avatar-chibi.png',
+  avatarUrl: '/avatar.jpg',
+  avatarChibiUrl: '/avatar-chibi.jpg',
   interests: [
     'Web Architecture',
     'Mobile Systems',
