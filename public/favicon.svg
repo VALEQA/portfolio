@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#0EA5E9" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Bright Coastal Rounded Box -->
+  <rect width="512" height="512" rx="128" fill="url(#oceanGrad)" />
+  <rect x="20" y="20" width="472" height="472" rx="110" stroke="rgba(255,255,255,0.4)" stroke-width="12" />
+
+  <!-- Bold Letter 'F' -->
+  <rect x="85" y="110" width="48" height="292" rx="14" fill="#FFFFFF" />
+  <rect x="85" y="110" width="160" height="48" rx="14" fill="#FFFFFF" />
+  <rect x="85" y="220" width="130" height="44" rx="12" fill="#FFF9D4" />
+
+  <!-- Bold Letter 'B' -->
+  <rect x="285" y="110" width="46" height="292" rx="14" fill="#FFFFFF" />
+  <!-- Upper B loop -->
+  <path
+    d="M305 110 H380 C416 110, 440 132, 440 172 C440 212, 416 234, 380 234 H305 V110 Z M353 154 V190 H378 C394 190, 402 182, 402 172 C402 162, 394 154, 378 154 H353 Z"
+    fill="#FFFFFF"
+  />
+  <!-- Lower B loop -->
+  <path
+    d="M305 220 H390 C430 220, 456 244, 456 294 C456 344, 430 402, 390 402 H305 V220 Z M353 264 V358 H388 C408 358, 418 340, 418 294 C418 274, 408 264, 388 264 H353 Z"
+    fill="#FFF9D4"
+  />
+</svg>
